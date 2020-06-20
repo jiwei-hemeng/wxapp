@@ -1,19 +1,25 @@
 # my-ugo
 
-## Project setup
+##  全局安装vue-cli
+
+```shell
+npm install -g @vue/cli
 ```
+
+##  创建项目
+
+```shell
+vue create -p dcloudio/uni-preset-vue my-project
+```
+
+##  安装项目依赖
+
+```shell
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 运行并发布uni-app
 
-### Compiles and minifies for production
+```shell
+npm run dev:mp-weixin
 ```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
