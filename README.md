@@ -27,6 +27,6 @@ npm run dev:mp-weixin
 ## 打包发布
 
 ```shell
-npm run build
+npm run build:mp-weixin
 ```
 
