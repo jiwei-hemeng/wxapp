@@ -13,6 +13,7 @@
       },
       // 2.1 通过js方式获取用户信息
       async js_getInfo () {
+        // uni自带的方法用于获取用户信息
         const [err,res] = await uni.getUserInfo()
         // 如果获取到请求获取token
         if(res){
