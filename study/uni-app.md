@@ -112,3 +112,77 @@ Page({
 })
 ```
 
+## 在项目中使用less的步骤
+
+不能直接使用，必须先安装，再使用
+
+```shell
+npm i less less-loader -D
+```
+
+配置：
+
+```html
+<style lang="less"></style>
+```
+
+## open 系列小结
+
++ 组件：`<button> open-type属性：会有一些行为:客服、意见、获取电话、用户信息`【button设计理念：用户**主动**（潜意识，自己同意被获取自己信息）点击才有效，属性可以设置获取用户隐私信息；】需要用户自己点击；
++ 组件：`<open-data> type 展示用户昵称、头像、性别、国家等非隐私信息`  【不需要用户同意，代码直接进行获取】
+
+## 地图相关
+
++ 展示：组件map
+
+  ```html
+  <map longitude="113.324520" latitude="23.099994"></map>
+  ```
+
++ 获取经纬度：需要在pages.json增加配置：位置信息是用户隐私；
+
+  ```js
+  wx.getLocation({success(res){
+      // 用户经纬度：GPS模块；
+  }});
+  ```
+
++ 使用**getLocation**前的page.json的配置
+
+  ```json
+  {
+    "pages": ["pages/index/index"],
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示" 
+      }
+    }
+  }
+  ```
+
+## uni-ui 使用说明
+
+安装
+
+```shell
+npm install @dcloudio/uni-ui
+```
+
+在 `script` 中引用组件：
+
+```js
+import {uniBadge} from '@dcloudio/uni-ui'
+//import uniBadge from '@dcloudio/uni-ui/lib/uni-badge/uni-badge.vue' //也可使用此方式引入组件
+export default {
+    components: {uniBadge}
+}
+```
+
+在 `template` 中使用组件
+
+```html
+<uni-badge text="1"></uni-badge>
+<uni-badge text="2" type="success" @click="bindClick"></uni-badge>
+<uni-badge text="3" type="primary" :inverted="true"></uni-badge>
+```
+
