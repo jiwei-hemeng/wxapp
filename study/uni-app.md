@@ -168,21 +168,34 @@ npm i less less-loader -D
 npm install @dcloudio/uni-ui
 ```
 
+将**node_modules\@dcloudio\uni-ui\lib**目录下的组件复制到项目的根目录下的**src\components**目录中
+
 在 `script` 中引用组件：
 
 ```js
-import {uniBadge} from '@dcloudio/uni-ui'
-//import uniBadge from '@dcloudio/uni-ui/lib/uni-badge/uni-badge.vue' //也可使用此方式引入组件
+import uniGrid from "@/components/uni-grid/uni-grid.vue"
+import uniGridItem from "@/components/uni-grid-item/uni-grid-item.vue"
 export default {
-    components: {uniBadge}
+    components: {
+        uniGrid,
+        uniGridItem
+    }
 }
 ```
 
 在 `template` 中使用组件
 
 ```html
-<uni-badge text="1"></uni-badge>
-<uni-badge text="2" type="success" @click="bindClick"></uni-badge>
-<uni-badge text="3" type="primary" :inverted="true"></uni-badge>
+<uni-grid :column="3">
+    <uni-grid-item>
+        <text class="text">文本</text>
+    </uni-grid-item>
+    <uni-grid-item>
+        <text class="text">文本</text>
+    </uni-grid-item>
+    <uni-grid-item>
+        <text class="text">文本</text>
+    </uni-grid-item>
+</uni-grid>
 ```
 
